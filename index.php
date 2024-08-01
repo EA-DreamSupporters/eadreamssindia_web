@@ -348,9 +348,9 @@ padding: 17px 90px;
 								<div class="exp-bx aos-item">
 									<div class="exp-head">
 										<div class="counter-num">
-											<h2><span class="counter">10</span><small>+</small></h2>
+											<h2><span class="counter">10</span><small>x</small></h2>
 										</div>
-										<h6 class="title">Years of Experience</h6>
+										<h6 class="title">Your Study Experience</h6>
 									</div>
 									<div class="exp-info">
 									
