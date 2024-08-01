@@ -219,13 +219,13 @@
                         <div class="col-lg-6 m-b30 wow fadeInUp" data-wow-delay="0.1s">
                             <div class="row sp10 about-thumb">
                                 <div class="col-sm-6 aos-item ">
-                                    <div class="video-container embed-responsive-16by9">
+                                    <div class="video-container">
                                         <video id="video" preload="metadata">
-                                            <source src="images/FLowAnimation.mp4" type="video/mp4">
+                                            <source src="images/flowanimation.mp4" type="video/mp4">
                                             <!-- You can include other formats if needed -->
                                             Your browser does not support the video tag.
                                         </video>
-                                        <img src="fallback-image.jpg" alt="Fallback Image" class="fallback-image">
+                                        <img src="images/fallbackimg.jpg" alt="Fallback Image" class="fallback-image">
                                         <button class="play-button" id="playButton">&#9658;</button>
                                         <!-- Play button (▶) -->
                                         <button class="pause-button" id="pauseButton"
