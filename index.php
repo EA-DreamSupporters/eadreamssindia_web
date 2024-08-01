@@ -131,6 +131,7 @@ padding: 17px 90px;
     .arrow-img {
         display: none; /* Hide the arrow image */
 }
+}
 
 /* Media query for screens smaller than 768px (typical mobile screens) */
 @media (min-width: 992px) {
@@ -279,7 +280,7 @@ padding: 17px 90px;
 					</div>
 				
 				</div>
-				<div class="container swiper-pagination-wrapper">
+				<div class="container swiper-pagination-wrapper" style="margin-left: 250px;">
 					<div class="swiper-pagination-five"></div>
 				</div>
 			</div>
