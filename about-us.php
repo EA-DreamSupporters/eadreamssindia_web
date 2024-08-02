@@ -308,7 +308,7 @@
                             <div class="about-content px-lg-4" style="margin-bottom: -143px;">
                                 <div class="section-head style-1">
                                     <h2 class="title">EA Dream Supporters: Your Best Ally</h2>
-                                    <p>EA Dream Supporters the Visionary ED-Tech Pioneer, Champions the Aspiration of
+                                    <p style="text-align: justify;">EA Dream Supporters the Visionary ED-Tech Pioneer, Champions the Aspiration of
                                         Indian Youth bridging gap between Dream & Challenges an Aspirants Faces.
                                         Discover EA Dream Supporters a Premier Destination of Competitive Test
                                         Preparations. This Comprehensive platform for Empowering Aspirants, Igniting
@@ -343,7 +343,7 @@
                                     <div class="dz-post-text">
                                         <p>We are a unique One(S)top Solution for Advanced Exam Preparation. EA Dream
                                             Supporters was founded to fulfill the dream of indian youth.</p>
-                                        <p>What does the term EA mean? <br> <br> EA refers to <b>"EZHUGA ARAMAE"</b>.
+                                        <p style="text-align: justify;">What does the term EA mean? <br> <br> EA refers to <b>"EZHUGA ARAMAE"</b>.
                                             Opportunities are not always equal in a huge country like India. Rural India
                                             lags significantly behind metropolitan India. Some metropolitan areas
                                             nevertheless behind metropolises by a significant margin. In India, We, the
@@ -361,7 +361,7 @@
                                 </div>
                             </div>
                             <h3 class="title" style='font-weight:bold;'>WHY EA DREAM SUPPORTERS ?</h3>
-                            <p class="m-b30">The youth population is a major driver of economic expansion. India is
+                            <p class="m-b30" style="text-align: justify;">The youth population is a major driver of economic expansion. India is
                                 going through a demographic shift, with potential presented by the "youth bulge." India
                                 has roughly 66% of the world's population and ranks fifth in the world for youth
                                 population, according to the MoEA. In India, 40% of people between the ages of 13 and 35
@@ -371,7 +371,7 @@
                                 to a lack of opportunities and infrastructure, many people (20-35 years old) wasted
                                 their prime working years.many people lost 20–35 years old is the prime time to look for
                                 it. </p>
-                            <p class="m-b30">One in five graduates are unemployed, according to the Center for
+                            <p class="m-b30" style="text-align: justify;">One in five graduates are unemployed, according to the Center for
                                 Monitoring the Indian Economy. A 2016 study found that 65% of young people (aged 15 to
                                 34) favour government employment. 65% of wealthy upper-middle-class youth and 63% of
                                 impoverished youth preferred to work in government. According to many, rural communities

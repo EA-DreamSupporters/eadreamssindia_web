@@ -34,11 +34,11 @@ include('config.php');
 	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <style>
 .client-swiper img {
-height: auto;
+	height: auto;
   
-  filter: unset;
+  	filter: unset;
  
-  width: 150px;
+  	width: 150px;
 }
 .book-footer{
 position:relative;

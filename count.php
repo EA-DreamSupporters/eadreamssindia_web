@@ -7,8 +7,8 @@
 								<i class="fa-solid fa-smile icon-cell"></i>
 							</div>
 							<div class="icon-content">
-								<h2 class="dz-title counter m-b0">963</h2>
-								<p class="font-20">Happy Customers</p>
+								<h2><span class="dz-title counter m-b0">100</span><small>%</small></h2>
+								<p class="font-20">Customers Satisfaction</p>
 							</div>
 						</div>
 					</div>
@@ -18,7 +18,7 @@
 								<i class="fa-solid fa-book icon-cell"></i>
 							</div>
 							<div class="icon-content">
-								<h2 class="dz-title counter m-b0">10,672</h2>
+								<h2><span class="dz-title counter m-b0">500</span><small>+</small></h2>
 								<p class="font-20">Book Collections</p>
 							</div>
 						</div>
@@ -29,8 +29,8 @@
 								<i class="fa-solid fa-users icon-cell"></i>
 							</div>
 							<div class="icon-content">
-								<h2 class="dz-title counter m-b0">262</h2>
-								<p class="font-20">Experts</p>
+							<h2><span class="dz-title counter m-b0">1000</span><small>+</small></h2>
+								<p class="font-20">Aspirants</p>
 							</div>
 						</div>
 					</div>
@@ -40,8 +40,8 @@
 								<i class="fa-solid fa-leaf icon-cell"></i>
 							</div>
 							<div class="icon-content">
-								<h2 class="dz-title counter m-b0">1457</h2>
-								<p class="font-20"> Total Soldout</p>
+								<h2><span class="dz-title counter m-b0">24,295</span></h2>
+								<p class="font-20">Community Engagement</p>
 							</div>
 						</div>
 					</div>

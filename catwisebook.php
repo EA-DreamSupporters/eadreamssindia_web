@@ -137,7 +137,7 @@ $cnt=$cnt+1;
 												<div class="form-check search-content">
 													<a href="pricewisedesc.php"><input class="form-check-input" type="checkbox" value="" id="productCheckBox-01">
 													<label class="form-check-label" for="productCheckBox-01">
-														Hign to Low
+														High to Low
 													</label></a>
 												</div>
 										

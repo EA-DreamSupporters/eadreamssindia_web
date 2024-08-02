@@ -363,14 +363,15 @@ select.form-control-1 option:focus {
                         <!-- Center content in a flex container -->
                         <div class="col-12 d-flex justify-content-start align-items-start">
                             <!-- Select Exam Dropdown -->
-                            <select class="fs form-control-1 me-3" style="color: #fff; border-radius:3px;">
-                                <option>Select Exam</option>
-                                <option>Select Exam1</option>
-                                <option>Select Exam2</option>
-                            </select>
+                            <select id="examSelect" class="fs form-control-1 me-3" style="color: #fff; border-radius:3px;">
+                <option>Select Exam</option>
+                <option value="GovPrep ( Essential Plan ) - Exam1 - $100">GovPrep ( Essential Plan ) - Exam1 - $100</option>
+                <option value="GovPrep ( Essential Plan ) - Exam2 - $120">GovPrep ( Essential Plan ) - Exam2 - $120</option>
+                <!-- Add more options as needed -->
+            </select>
 
                             <!-- Buy Now Button -->
-                            <div class="buy-now">
+                            <div class="buy-now" id="btnBuy">
                                 <?php
                                 if (strlen($_SESSION['id']) == 0) {
                                 ?>
@@ -381,15 +382,40 @@ select.form-control-1 option:focus {
                                 <?php
                                 } else {
                                 ?>
-                                    <button class="btn btn-secondary btnhover2">
-                                        <i class="bi-cart-fill me-1"></i> Buy Now
-                                    </button>
+                                    <button id="buyNowButton" class="btn btn-primary">
+                <i aria-hidden="true" style="padding-right: 5px;"></i>
+                Buy Now
+            </button>
                                 <?php
                                 }
                                 ?>
                             </div>
                         </div>
                     </div>
+                    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Get references to elements
+        var examSelect = document.getElementById('examSelect');
+        var buyNowButton = document.getElementById('buyNowButton');
+
+        // Event listener for Buy Now button click
+        buyNowButton.addEventListener('click', function() {
+            // Scroll to the guidance.php section with id "loginToGetGuidance"
+            document.querySelector('#loginToGetGuidance').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+
+        // Event listener for exam selection change
+        examSelect.addEventListener('change', function() {
+            // Get the selected option text
+            var selectedOptionText = examSelect.options[examSelect.selectedIndex].text;
+
+            // Set the selected option text to the Buy Now button
+            buyNowButton.innerHTML = '<i aria-hidden="true" style="padding-right: 5px;"></i> Buy Now - ' + selectedOptionText;
+        });
+    });
+</script>
                 </div>
 
         </div>
@@ -528,7 +554,7 @@ select.form-control-1 option:focus {
                                 } else {
                                 ?>
                                     <div>
-                                        <a href="" class="btn w-100 btn-primary btnhover" data-bs-toggle="modal" data-bs-target="#myModal">Login to get guidance</a>
+                                        <a href="" class="btn w-100 btn-primary btnhover" id= "submit" data-bs-toggle="modal" data-bs-target="#myModal">Login to get guidance</a>
                                     </div>
                                 <?php
                                 }
