@@ -33,7 +33,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 	<style>
 	.section-head {
-  margin-bottom: 219px;
+  margin-bottom: 219px;}
 	</style>
 
 </head>	
@@ -183,6 +183,6 @@ Depending on where you live, the time it may take for your exchanged product to 
 <script src="js/custom.js"></script><!-- CUSTOM JS -->
 <script src="vendor/wow/wow.min.js"></script><!-- WOW JS -->
 
-
+	
 </body>
 </html>

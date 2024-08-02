@@ -165,7 +165,7 @@ if(isset($_POST['video'])){
 ?>
         <div class="page-content">
             <!-- inner page banner -->
-            <div class="dz-bnr-inr overlay-black-dark dz-bnr-inr-sm"
+            <div class="dz-bnr-inr overlay-secondary-dark dz-bnr-inr-sm"
                 style="background-image:url(images/background/bg3.jpg);">
                 <div class="container">
                     <div class="dz-bnr-inr-entry">

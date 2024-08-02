@@ -83,12 +83,11 @@ p:hover {
 									
 									<th>S.No</th>
 									<th>Name</th> 
-                                    <th>Date Of Birth</th> 
+                  <th>Date Of Birth</th> 
 									<th>Email</th>
 									<th>Phone</th>
-									<th>Passed Out ?</th>
-									<th>Passed Out year</th>
-									<th>Self Paced Person ?</th>
+									<th>Profession</th>
+									<th>Plan</th>	
 									<th>Address</th>					
 									<th>Message</th> 				
 									<th>Applied Date</th> 
@@ -113,8 +112,7 @@ p:hover {
 									<td><?php echo $row["email"]; ?></td>
 									<td><?php echo $row["phone"]; ?></td>
 									<td><?php echo $row["pout"]; ?></td>
-									<td><?php echo $row["poutyear"]; ?></td>
-									<td><?php echo $row["pace"]; ?></td>
+									<td><?php echo $row["plan"]; ?></td>
 									<td><?php echo $row["address"]; ?></td>
 									<td><?php echo $row["msg"]; ?></td>
 									<td><?php echo $row["gutime"]; ?></td>

@@ -239,46 +239,76 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             padding: 10px 0;
             appearance: none !important;
         }
+
         .rounded-container {
             background-image: url('images/background/bg23-man.jpg');
             background-size: cover;
-            border-radius: 20px; /* Rounded corners */
-            max-width: 1280px; /* Max width for the container */
-            padding: 20px; /* Padding inside the container */
+            border-radius: 20px;
+            /* Rounded corners */
+            max-width: 1280px;
+            /* Max width for the container */
+            padding: 20px;
+            /* Padding inside the container */
             margin-bottom: 192px;
-            position: relative; /* To position the logo absolutely */
+            position: relative;
+            /* To position the logo absolutely */
             color: white;
             text-align: center;
-            z-index:1;
+            z-index: 1;
             margin-left: auto;
             margin-right: auto;
             margin-bottom: 100px;
         }
+
         .form-control-1 {
-    background-color: transparent; /* Ensure no fill */
-    border: 2px solid white;
-    margin-left: 0px !important;
-    border-radius: 5px;
-    padding: 10px;
-    width: 200px; /* Adjust width as needed */
-    color: white; /* Adjust text color as needed */
+            background-color: transparent;
+            /* Ensure no fill */
+            border: 2px solid white;
+            margin-left: 0px !important;
+            border-radius: 5px;
+            padding: 10px;
+            width: 200px;
+            /* Adjust width as needed */
+            color: white;
+            /* Adjust text color as needed */
+        }
+
+        .form-control-1:focus,
+        .form-control-1:active,
+        .form-control-1 option:checked {
+            background-color: #1a1a1a;
+            /* Light transparent background on focus/active */
+        }
+
+        select.form-control-1 option {
+            background-color: #333;
+            /* Background for options */
+            color: white;
+            /* Text color for options */
+        }
+
+        select.form-control-1 option:hover,
+        select.form-control-1 option:focus {
+            background-color: #1a1a1a;
+            /* Light transparent background on hover/focus */
+        }
+        .video-container {
+            position: relative;
+            width: 100%; /* Match the width of the iframe */
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            border-radius: 30px; /* Adjust the radius as needed */
+            overflow: hidden; /* Ensures the iframe content does not overflow */
 }
 
-.form-control-1:focus,
-.form-control-1:active,
-.form-control-1 option:checked {
-    background-color: #1a1a1a; /* Light transparent background on focus/active */
-}
-
-select.form-control-1 option {
-    background-color: #333; /* Background for options */
-    color: white; /* Text color for options */
-}
-
-select.form-control-1 option:hover,
-select.form-control-1 option:focus {
-    background-color: #1a1a1a; /* Light transparent background on hover/focus */
-}
+        .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        }
+                
     </style>
 
 </head>
@@ -323,7 +353,9 @@ select.form-control-1 option:focus {
                 <div class="container">
                     <div class="section-head text-center " style="margin-bottom: 100px;">
                         <h2 class="title">What is GovPrep?</h2><br><br>
-                        <iframe width="448" height="252" src="https://www.youtube.com/embed/QCv6oALIpow?si=obkGx1t31fEyOHfh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/QCv6oALIpow?si=obkGx1t31fEyOHfh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -336,7 +368,7 @@ select.form-control-1 option:focus {
 
 
             <!-- Feature Box -->
-            <section class="py-5 rounded-container " style=" background-size: cover; margin-bottom: 220px; margin-top: 100px;"title="Illustration by Olha Khomich";>
+            <section class="py-5 rounded-container " style=" background-size: cover; margin-bottom: 220px; margin-top: 100px;" title="Illustration by Olha Khomich" ;>
                 <div class="container">
                     <div class="row pt-3 subscride-inner">
                         <div class="col-12 d-flex flex-column align-items-start" style="margin-top: -30px">
@@ -363,59 +395,73 @@ select.form-control-1 option:focus {
                         <!-- Center content in a flex container -->
                         <div class="col-12 d-flex justify-content-start align-items-start">
                             <!-- Select Exam Dropdown -->
-                            <select id="examSelect" class="fs form-control-1 me-3" style="color: #fff; border-radius:3px;">
-                <option>Select Exam</option>
-                <option value="GovPrep ( Essential Plan ) - Exam1 - $100">GovPrep ( Essential Plan ) - Exam1 - $100</option>
-                <option value="GovPrep ( Essential Plan ) - Exam2 - $120">GovPrep ( Essential Plan ) - Exam2 - $120</option>
-                <!-- Add more options as needed -->
-            </select>
+                            <select id="examChoose" class="fs form-control-1 me-3" style="color: #fff; border-radius:3px;">
+                                <option value="" disabled selected>Select Exam</option>
+                                <option value="Exam1">Exam1</option>
+                                <option value="Exam2">Exam2</option>
+                            </select>
 
                             <!-- Buy Now Button -->
-                            <div class="buy-now" id="btnBuy">
+                            <div class="buy-now">
                                 <?php
                                 if (strlen($_SESSION['id']) == 0) {
                                 ?>
-                                    <a class="btn btn-primary" href="register.php">
+                                    <a class="btn btn-primary" href="login.php">
                                         <i aria-hidden="true" style="padding-right: 5px;"></i>
                                         Buy Now
                                     </a>
                                 <?php
                                 } else {
                                 ?>
-                                    <button id="buyNowButton" class="btn btn-primary">
-                <i aria-hidden="true" style="padding-right: 5px;"></i>
-                Buy Now
-            </button>
+                                    <button class="btn btn-primary btnhover" id="buyNowButton">
+                                        <i class="bi-cart-fill me-1"></i> Buy Now
+                                    </button>
                                 <?php
                                 }
                                 ?>
                             </div>
+
+                            <script>
+                                document.addEventListener("DOMContentLoaded", function() {
+                                    const examSelect = document.getElementById("examChoose");
+                                    const planSelect = document.getElementById("plan");
+
+                                    const plans = {
+                                        "Exam1": "GovPrep (Essential Plan) | Exam1 - ₹2000",
+                                        "Exam2": "GovPrep (Essential Plan) | Exam2 - ₹2500"
+                                    };
+
+                                    examSelect.addEventListener("change", function() {
+                                        const selectedExam = examSelect.value;
+                                        if (plans[selectedExam]) {
+                                            planSelect.innerHTML = `<option value="${plans[selectedExam]}">${plans[selectedExam]}</option>`;
+                                        } else {
+                                            planSelect.innerHTML = '<option value="" disabled selected>Select a Pricing above Plan</option>';
+                                        }
+                                    });
+                                });
+                            </script>
+
+                            <script>
+                                document.addEventListener("DOMContentLoaded", function() {
+                                    const buyNowButton = document.getElementById("buyNowButton");
+                                    const loginGuidanceButton = document.getElementById("buy");
+
+                                    if (buyNowButton && loginGuidanceButton) {
+                                        buyNowButton.addEventListener("click", function(event) {
+                                            // Prevent default behavior if necessary
+                                            event.preventDefault();
+
+                                            // Scroll to the login guidance button smoothly
+                                            loginGuidanceButton.scrollIntoView({
+                                                behavior: 'smooth'
+                                            });
+                                        });
+                                    }
+                                });
+                            </script>
                         </div>
                     </div>
-                    <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Get references to elements
-        var examSelect = document.getElementById('examSelect');
-        var buyNowButton = document.getElementById('buyNowButton');
-
-        // Event listener for Buy Now button click
-        buyNowButton.addEventListener('click', function() {
-            // Scroll to the guidance.php section with id "loginToGetGuidance"
-            document.querySelector('#loginToGetGuidance').scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-
-        // Event listener for exam selection change
-        examSelect.addEventListener('change', function() {
-            // Get the selected option text
-            var selectedOptionText = examSelect.options[examSelect.selectedIndex].text;
-
-            // Set the selected option text to the Buy Now button
-            buyNowButton.innerHTML = '<i aria-hidden="true" style="padding-right: 5px;"></i> Buy Now - ' + selectedOptionText;
-        });
-    });
-</script>
                 </div>
 
         </div>
@@ -514,7 +560,7 @@ select.form-control-1 option:focus {
 
                                     <label for="plan">Choose Plan</label>
                                     </br>
-                                    <select required class="form-control" id="plan" name="plan">
+                                    <select required class="form-control" id="plan" name="plan" required>
                                         <option value="" disabled selected>Select a Pricing above Plan</option>
                                     </select>
 
@@ -554,7 +600,7 @@ select.form-control-1 option:focus {
                                 } else {
                                 ?>
                                     <div>
-                                        <a href="" class="btn w-100 btn-primary btnhover" id= "submit" data-bs-toggle="modal" data-bs-target="#myModal">Login to get guidance</a>
+                                        <a href="" class="btn w-100 btn-primary btnhover" data-bs-toggle="modal" data-bs-target="#myModal">Login to get guidance</a>
                                     </div>
                                 <?php
                                 }

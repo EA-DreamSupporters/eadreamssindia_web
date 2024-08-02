@@ -286,165 +286,110 @@
 
 
                 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-                <script>
-                    document.addEventListener('DOMContentLoaded', function() {
-                        const planButton = document.getElementById('planButton');
-                        const planSelect = document.getElementById('plan');
-                        const examSelect = document.getElementById('examSelect');
-                        const originalPrice = document.getElementById('originalPrice');
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const planButton = document.getElementById('planButton');
+        const plusPlanButton = document.getElementById('plusPlanBtn');
+        const planSelect = document.getElementById('plan');
+        const examSelect = document.getElementById('examSelect');
+        const originalPrice = document.getElementById('originalPrice');
+        
+        // Pricing and months for each exam
+        const pricing = {
+            'TNPSC': { price: '₹ 1500', months: '2 months', originalPrice: '₹ 5000' },
+            'UPSC': { price: '₹ 2500', months: '4 months', originalPrice: '₹ 6000' },
+            'SSC': { price: '₹ 1800', months: '3 months', originalPrice: '₹ 5500' },
+            'Banking': { price: '₹ 2000', months: '3 months', originalPrice: '₹ 5700' }
+        };
 
-                        // Pricing and months for each exam
-                        const pricing = {
-                            'TNPSC': {
-                                price: '₹ 1500',
-                                months: '2 months',
-                                originalPrice: '₹ 5000'
-                            },
-                            'UPSC': {
-                                price: '₹ 2500',
-                                months: '4 months',
-                                originalPrice: '₹ 6000'
-                            },
-                            'SSC': {
-                                price: '₹ 1800',
-                                months: '3 months',
-                                originalPrice: '₹ 5500'
-                            },
-                            'Banking': {
-                                price: '₹ 2000',
-                                months: '3 months',
-                                originalPrice: '₹ 5700'
-                            }
-                        };
+        function updatePlanDetails() {
+            const examValue = examSelect.value;
 
-                        function updatePlanDetails() {
-                            const examValue = examSelect.value;
+            if (examValue === 'default' || !pricing[examValue]) {
+                planButton.innerHTML = '<span class="text-center h6 p-3 text-white1" style="font-family: outfit;">Choose Plan</span>';
+                planButton.style.color = '';
+                planButton.style.fontWeight = '';
+                originalPrice.style.display = 'none';
+                planSelect.innerHTML = '<option value="">Choose Plan</option>';
+                return;
+            }
 
-                            if (examValue === 'default' || !pricing[examValue]) {
-                                planButton.innerHTML = '<span class="text-center h6 p-3 text-white1" style = "font-family :outfit;">Choose Plan</span>';
-                                planButton.style.color = '';
-                                planButton.style.fontWeight = '';
-                                originalPrice.style.display = 'none';
-                                planSelect.innerHTML = '<option value="">Choose Plan</option>';
-                                return;
-                            }
+            const { price, months, originalPrice: origPrice } = pricing[examValue];
+            const planValue = `${price} / ${months}`;
+            const planOption = 'Fresh';
 
-                            const {
-                                price,
-                                months,
-                                originalPrice: origPrice
-                            } = pricing[examValue];
-                            const planValue = `${price} / ${months}`;
-                            const planOption = 'Fresh';
+            planButton.innerHTML = `<span class="text-center h6 p-3 text-white1" style="font-weight: bold; font-family: outfit;">${planValue}</span>`;
+            planButton.style.color = '#000000';
+            planButton.style.fontWeight = 'bold';
+            originalPrice.innerHTML = `<span style="font-weight: bold; font-family: outfit; margin-left:10px;">${origPrice}</span>`;
+            originalPrice.style.display = 'block';
+            originalPrice.style.color = '#ff0000';
+            originalPrice.style.fontWeight = 'bold';
 
-                            // Update button and dropdown
-                            planButton.innerHTML = `<span class="text-center h6 p-3 text-white1" style="font-weight: bold; font-family :outfit;">${planValue}</span>`;
-                            planButton.style.color = '#000000'; // Plan button text color
-                            planButton.style.fontWeight = 'bold'; // Plan button font weight
-                            originalPrice.innerHTML = `<span style="font-weight: bold; font-family :outfit; margin-left:10px;">${origPrice}</span>`;
-                            originalPrice.style.display = 'block';
-                            originalPrice.style.color = '#ff0000'; // Original price text color
-                            originalPrice.style.fontWeight = 'bold'; // Original price font weight
+            planSelect.innerHTML = `<option value="GovPrep - ${planOption} - ${examValue} - ${planValue}">GovPrep - ${planOption} - ${examValue} - ${planValue}</option>`;
+            planSelect.value = `GovPrep - ${planOption} - ${examValue} - ${planValue}`;
+        }
 
-                            planSelect.innerHTML = `<option value="GovPrep - ${planOption} - ${examValue} - ${planValue}">GovPrep - ${planOption} - ${examValue} - ${planValue}</option>`;
-                            planSelect.value = `GovPrep - ${planOption} - ${examValue} - ${planValue}`;
-                        }
+        function handlePlanButtonClick() {
+            const examValue = examSelect.value;
 
-                        function handleButtonClick() {
-                            const examValue = examSelect.value;
+            if (examValue === 'default' || !pricing[examValue]) {
+                alert('Please select an exam');
+                return;
+            }
 
-                            if (examValue === 'default' || !pricing[examValue]) {
-                                alert('Please select an exam');
-                                return;
-                            }
+            const { price, months, originalPrice: origPrice } = pricing[examValue];
+            const planValue = `${price} / ${months}`;
+            const planOption = 'Fresh';
 
-                            const {
-                                price,
-                                months,
-                                originalPrice: origPrice
-                            } = pricing[examValue];
-                            const planValue = `${price} / ${months}`;
-                            const planOption = 'Fresh';
+            if (planButton.classList.contains('selected')) {
+                // Uncheck: remove icon and deselect plan
+                planButton.innerHTML = `<span class="text-center h6 p-3 text-white1" style="font-weight: bold; font-family: outfit; padding: 0 20px;">${planValue}</span>`;
+                planButton.classList.remove('selected');
+                planButton.style.color = '';
+                planButton.style.fontWeight = '';
+                originalPrice.innerHTML = `<span style="font-weight: bold; font-family: outfit; margin-left:10px;">${origPrice}</span>`;
+                originalPrice.style.color = '';
+                originalPrice.style.fontWeight = '';
+                planSelect.innerHTML = '<option value="">Choose Plan</option>';
+                
+                // Deselect Plus plan button if selected
+                if (plusPlanButton.classList.contains('selected')) {
+                    plusPlanButton.click();
+                }
+            } else {
+                // Check: add icon and select plan
+                planButton.innerHTML = `<i class="fas fa-check-circle" style="margin-left:10px;"></i> <span class="text-center h6 p-3 text-white1" style="font-weight: bold; font-family: outfit; margin-right:10px; padding: 0 10px;">${planValue}</span>`;
+                planButton.classList.add('selected');
+                planButton.style.color = '#000000';
+                planButton.style.fontWeight = 'bold';
+                originalPrice.innerHTML = `<span style="font-weight: bold; font-family: outfit; margin-left:10px;">${origPrice}</span>`;
+                originalPrice.style.color = '#ff0000';
+                originalPrice.style.fontWeight = 'bold';
+                planSelect.innerHTML = `<option value="GovPrep - ${planOption} - ${examValue} - ${planValue}">GovPrep - ${planOption} - ${examValue} - ${planValue}</option>`;
+                planSelect.value = `GovPrep - ${planOption} - ${examValue} - ${planValue}`;
+                
+                // Deselect Plus plan button if selected
+                if (plusPlanButton.classList.contains('selected')) {
+                    plusPlanButton.click();
+                }
+            }
 
-                            if (planButton.classList.contains('selected')) {
-                                // Uncheck: remove icon and deselect plan
-                                planButton.innerHTML = `<span class="text-center h6 p-3 text-white1" style="font-weight: bold; font-family :outfit; padding: 0 20px;">${planValue}</span>`;
-                                planButton.classList.remove('selected');
-                                planButton.style.color = ''; // Reset button text color
-                                planButton.style.fontWeight = ''; // Reset button font weight
-                                originalPrice.innerHTML = `<span style="font-weight: bold; font-family :outfit; margin-left:10px;">${origPrice}</span>`;
-                                originalPrice.style.color = ''; // Reset original price text color
-                                originalPrice.style.fontWeight = ''; // Reset original price font weight
-                                planSelect.innerHTML = '<option value="">Choose Plan</option>';
-                            } else {
-                                // Check: add icon and select plan
-                                planButton.innerHTML = `<i class="fas fa-check-circle" style="margin-left:10px;"></i> <span class="text-center h6 p-3 text-white1" style="font-weight: bold; font-family :outfit; margin-right:10px; padding: 0 10px;">${planValue}</span>`;
-                                planButton.classList.add('selected');
-                                planButton.style.color = '#000000'; // Selected plan button text color
-                                planButton.style.fontWeight = 'bold'; // Selected plan button font weight
-                                originalPrice.innerHTML = `<span style="font-weight: bold; font-family :outfit; margin-left:10px;">${origPrice}</span>`;
-                                originalPrice.style.color = '#ff0000'; // Original price text color
-                                originalPrice.style.fontWeight = 'bold'; // Original price font weight
-                                planSelect.innerHTML = `<option value="GovPrep - ${planOption} - ${examValue} - ${planValue}">GovPrep - ${planOption} - ${examValue} - ${planValue}</option>`;
-                                planSelect.value = `GovPrep - ${planOption} - ${examValue} - ${planValue}`;
-                            }
+            localStorage.setItem('selectedExam', examValue);
+            localStorage.setItem('buttonState', planButton.classList.contains('selected') ? 'selected' : 'unselected');
+        }
 
-                            // Send the selected plan to the guidance.php page using a fetch request
-                            fetch('guidance.php', {
-                                    method: 'POST',
-                                    headers: {
-                                        'Content-Type': 'application/json'
-                                    },
-                                    body: JSON.stringify({
-                                        plan: selectedOption,
-                                        exam: examValue
-                                    })
-                                })
-                                .then(response => response.text())
-                                .then(data => console.log(data))
-                                .catch(error => console.error('Error:', error));
+        examSelect.addEventListener('change', function() {
+            updatePlanDetails();
+            if (examSelect.value !== 'default') {
+                planButton.classList.add('pulse');
+                setTimeout(() => planButton.classList.remove('pulse'), 1000);
+            }
+        });
 
-                            // Save state to localStorage
-                            localStorage.setItem('selectedExam', examValue);
-                            localStorage.setItem('buttonState', planButton.classList.contains('selected') ? 'selected' : 'unselected');
-
-                            // Event listeners for Plus plan button and dropdown
-                            planButton.addEventListener('click', handleplanButtonClick);
-                            examSelect.addEventListener('change', updateplanDetails);
-                        }
-
-                        // Initialize with stored values if available
-                        const storedExam = localStorage.getItem('selectedExam');
-                        const storedButtonState = localStorage.getItem('buttonState');
-
-
-                        // Add animation to button when an exam is selected
-                        examSelect.addEventListener('change', function() {
-                            updatePlanDetails();
-                            if (examSelect.value !== 'default') {
-                                planButton.classList.add('pulse');
-                                setTimeout(() => planButton.classList.remove('pulse'), 1000);
-                            }
-                        });
-
-                        // Handle button click
-                        planButton.addEventListener('click', handleButtonClick);
-
-                        // Add CSS for the pulse effect
-                        const style = document.createElement('style');
-                        style.innerHTML = `
-                            @keyframes pulse {
-                                0% { transform: scale(1); }
-                                50% { transform: scale(1.05); }
-                                100% { transform: scale(1); }
-                            }
-                            .pulse {
-                                animation: pulse 1s;
-                            }
-                        `;
-                        document.head.appendChild(style);
-                    });
-                </script>
+        planButton.addEventListener('click', handlePlanButtonClick);
+    });
+</script>
 
             </div>
 
@@ -514,143 +459,109 @@
                     <p id="plusOriginalPrice" class="text-light text-decoration-line-through" style="font-weight:normal; font-size:18px; margin-right: 30px;"></p>
                 </div>
                 <script>
-                    document.addEventListener('DOMContentLoaded', function() {
-                        const plusPlanButton = document.getElementById('plusPlanBtn');
-                        const plusPlanSelect = document.getElementById('plan');
-                        const plusExamSelect = document.getElementById('plusSelect');
-                        const plusOriginalPrice = document.getElementById('plusOriginalPrice');
-                        const plusPlanForm = document.getElementById('plusPlanForm');
-                        const selectedExamInput = document.getElementById('selectedExamInput');
-                        const selectedPlanInput = document.getElementById('selectedPlanInput');
+    document.addEventListener('DOMContentLoaded', function() {
+        const plusPlanButton = document.getElementById('plusPlanBtn');
+        const plusPlanSelect = document.getElementById('plan');
+        const plusExamSelect = document.getElementById('plusSelect');
+        const plusOriginalPrice = document.getElementById('plusOriginalPrice');
+        const plusPlanForm = document.getElementById('plusPlanForm');
+        const selectedExamInput = document.getElementById('selectedExamInput');
+        const selectedPlanInput = document.getElementById('selectedPlanInput');
 
-                        // Pricing and months for each exam
-                        const pricingDetails = {
-                            'TNPSC': {
-                                price: '₹ 1500',
-                                months: '2 months',
-                                plusOriginalPrice: '₹ 5000'
-                            },
-                            'UPSC': {
-                                price: '₹ 2500',
-                                months: '4 months',
-                                plusOriginalPrice: '₹ 6000'
-                            },
-                            'SSC': {
-                                price: '₹ 1800',
-                                months: '3 months',
-                                plusOriginalPrice: '₹ 5500'
-                            },
-                            'BANKING': {
-                                price: '₹ 2000',
-                                months: '3 months',
-                                plusOriginalPrice: '₹ 5700'
-                            }
-                        };
+        // Pricing and months for each exam
+        const pricingDetails = {
+            'TNPSC': { price: '₹ 1500', months: '2 months', plusOriginalPrice: '₹ 5000' },
+            'UPSC': { price: '₹ 2500', months: '4 months', plusOriginalPrice: '₹ 6000' },
+            'SSC': { price: '₹ 1800', months: '3 months', plusOriginalPrice: '₹ 5500' },
+            'BANKING': { price: '₹ 2000', months: '3 months', plusOriginalPrice: '₹ 5700' }
+        };
 
-                        function updatePlusPlanDetails() {
-                            const selectedExam = plusExamSelect.value;
+        function updatePlusPlanDetails() {
+            const selectedExam = plusExamSelect.value;
 
-                            if (selectedExam === 'default' || !pricingDetails[selectedExam]) {
-                                plusPlanButton.innerHTML = '<span class="text-center h6 p-3 text-white1" style="font-family: outfit;">Choose Plan</span>';
-                                plusPlanButton.style.color = '';
-                                plusPlanButton.style.fontWeight = '';
-                                plusOriginalPrice.style.display = 'none';
-                                plusPlanSelect.innerHTML = '<option value="">Choose Plan</option>';
-                                return;
-                            }
+            if (selectedExam === 'default' || !pricingDetails[selectedExam]) {
+                plusPlanButton.innerHTML = '<span class="text-center h6 p-3 text-white1" style="font-family: outfit;">Choose Plan</span>';
+                plusPlanButton.style.color = '';
+                plusPlanButton.style.fontWeight = '';
+                plusOriginalPrice.style.display = 'none';
+                plusPlanSelect.innerHTML = '<option value="">Choose Plan</option>';
+                return;
+            }
 
-                            const {
-                                price,
-                                months,
-                                plusOriginalPrice: orgprice
-                            } = pricingDetails[selectedExam];
-                            const planDescription = `${price} / ${months}`;
-                            const plusPlanOption = "Plus";
+            const { price, months, plusOriginalPrice: orgprice } = pricingDetails[selectedExam];
+            const planDescription = `${price} / ${months}`;
+            const plusPlanOption = 'Plus';
 
-                            // Update Plus plan button and dropdown
-                            plusPlanButton.innerHTML = `<span class="text-center h6 p-3 text-white1" style="font-family: outfit;">${planDescription}</span>`;
-                            plusPlanButton.style.color = '#000000'; // Plus plan button text color
-                            plusPlanButton.style.fontWeight = 'bold';
-                            plusOriginalPrice.innerHTML = `<span style="font-weight: bold; font-family: outfit; margin-left:10px;">${orgprice}</span>`;
-                            plusOriginalPrice.style.display = 'block';
-                            plusOriginalPrice.style.color = '#ff0000'; // Original price text color
-                            plusOriginalPrice.style.fontWeight = 'bold'; // Original price font weight
+            plusPlanButton.innerHTML = `<span class="text-center h6 p-3 text-white1" style="font-family: outfit;">${planDescription}</span>`;
+            plusPlanButton.style.color = '#000000';
+            plusPlanButton.style.fontWeight = 'bold';
+            plusOriginalPrice.innerHTML = `<span style="font-weight: bold; font-family: outfit; margin-left:10px;">${orgprice}</span>`;
+            plusOriginalPrice.style.display = 'block';
+            plusOriginalPrice.style.color = '#ff0000';
+            plusOriginalPrice.style.fontWeight = 'bold';
 
-                            plusPlanSelect.innerHTML = `<option value="GovPrep - ${plusPlanOption} - ${selectedExam} - ${planDescription}">GovPrep - ${plusPlanOption} - ${selectedExam} - ${planDescription}</option>`;
-                            plusPlanSelect.value = `GovPrep - ${plusPlanOption} - ${selectedExam} - ${planDescription}`;
-                        }
+            plusPlanSelect.innerHTML = `<option value="GovPrep - ${plusPlanOption} - ${selectedExam} - ${planDescription}">GovPrep - ${plusPlanOption} - ${selectedExam} - ${planDescription}</option>`;
+            plusPlanSelect.value = `GovPrep - ${plusPlanOption} - ${selectedExam} - ${planDescription}`;
+        }
 
-                        function handlePlusPlanButtonClick() {
-                            const selectedExam = plusExamSelect.value;
+        function handlePlusPlanButtonClick() {
+            const selectedExam = plusExamSelect.value;
 
-                            if (selectedExam === 'default' || !pricingDetails[selectedExam]) {
-                                alert('Please select an exam');
-                                return;
-                            }
+            if (selectedExam === 'default' || !pricingDetails[selectedExam]) {
+                alert('Please select an exam');
+                return;
+            }
 
-                            const {
-                                price,
-                                months,
-                                plusOriginalPrice: orgprice
-                            } = pricingDetails[selectedExam];
-                            const planDescription = `${price} / ${months}`;
-                            const plusPlanOption = 'Plus';
+            const { price, months, plusOriginalPrice: orgprice } = pricingDetails[selectedExam];
+            const planDescription = `${price} / ${months}`;
+            const plusPlanOption = 'Plus';
 
-                            if (plusPlanButton.classList.contains('selected')) {
-                                // Uncheck: remove icon and deselect plan
-                                plusPlanButton.innerHTML = `<span class="text-center h6 p-3 text-white1" style="font-weight: bold; font-family: outfit; padding: 0 20px;">${planDescription}</span>`;
-                                plusPlanButton.classList.remove('selected');
-                                plusPlanButton.style.color = ''; // Reset button text color
-                                plusPlanButton.style.fontWeight = ''; // Reset button font weight
-                                plusOriginalPrice.innerHTML = `<span style="font-weight: bold; font-family: outfit; margin-left:10px;">${orgprice}</span>`;
-                                plusOriginalPrice.style.color = ''; // Reset original price text color
-                                plusOriginalPrice.style.fontWeight = ''; // Reset original price font weight
-                                plusPlanSelect.innerHTML = '<option value="">Choose Plan</option>';
-                            } else {
-                                // Check: add icon and select plan
-                                plusPlanButton.innerHTML = `<i class="fas fa-check-circle" style="margin-left:10px;"></i> <span class="text-center h6 p-3 text-white1" style="font-weight: bold; font-family: outfit; margin-right:10px; padding: 0 10px;">${planDescription}</span>`;
-                                plusPlanButton.classList.add('selected');
-                                plusPlanButton.style.color = '#000000'; // Selected plan button text color
-                                plusPlanButton.style.fontWeight = 'bold'; // Selected plan button font weight
-                                plusOriginalPrice.innerHTML = `<span style="font-weight: bold; font-family: outfit; margin-left:10px;">${orgprice}</span>`;
-                                plusOriginalPrice.style.color = '#ff0000'; // Original price text color
-                                plusOriginalPrice.style.fontWeight = 'bold'; // Original price font weight
-                                plusPlanSelect.innerHTML = `<option value="GovPrep - ${plusPlanOption} - ${selectedExam} - ${planDescription}">GovPrep - ${plusPlanOption} - ${selectedExam} - ${planDescription}</option>`;
-                                plusPlanSelect.value = `GovPrep - ${plusPlanOption} - ${selectedExam} - ${planDescription}`;
-                            }
+            if (plusPlanButton.classList.contains('selected')) {
+                // Uncheck: remove icon and deselect plan
+                plusPlanButton.innerHTML = `<span class="text-center h6 p-3 text-white1" style="font-weight: bold; font-family: outfit; padding: 0 20px;">${planDescription}</span>`;
+                plusPlanButton.classList.remove('selected');
+                plusPlanButton.style.color = '';
+                plusPlanButton.style.fontWeight = '';
+                plusOriginalPrice.innerHTML = `<span style="font-weight: bold; font-family: outfit; margin-left:10px;">${orgprice}</span>`;
+                plusOriginalPrice.style.color = '';
+                plusOriginalPrice.style.fontWeight = '';
+                plusPlanSelect.innerHTML = '<option value="">Choose Plan</option>';
 
+                // Deselect Fresh plan button if selected
+                if (planButton.classList.contains('selected')) {
+                    planButton.click();
+                }
+            } else {
+                // Check: add icon and select plan
+                plusPlanButton.innerHTML = `<i class="fas fa-check-circle" style="margin-left:10px;"></i> <span class="text-center h6 p-3 text-white1" style="font-weight: bold; font-family: outfit; margin-right:10px; padding: 0 10px;">${planDescription}</span>`;
+                plusPlanButton.classList.add('selected');
+                plusPlanButton.style.color = '#000000';
+                plusPlanButton.style.fontWeight = 'bold';
+                plusOriginalPrice.innerHTML = `<span style="font-weight: bold; font-family: outfit; margin-left:10px;">${orgprice}</span>`;
+                plusOriginalPrice.style.color = '#ff0000';
+                plusOriginalPrice.style.fontWeight = 'bold';
+                plusPlanSelect.innerHTML = `<option value="GovPrep - ${plusPlanOption} - ${selectedExam} - ${planDescription}">GovPrep - ${plusPlanOption} - ${selectedExam} - ${planDescription}</option>`;
+                plusPlanSelect.value = `GovPrep - ${plusPlanOption} - ${selectedExam} - ${planDescription}`;
 
-                            // Set hidden inputs and submit form to guidance.php
-                            selectedExamInput.value = selectedExam;
-                            selectedPlanInput.value = planDescription;
-                            plusPlanForm.submit();
+                // Deselect Fresh plan button if selected
+                if (planButton.classList.contains('selected')) {
+                    planButton.click();
+                }
+            }
 
-                            // Save state to localStorage
-                            localStorage.setItem('selectedExamPlus', selectedExam);
-                            localStorage.setItem('buttonStatePlus', plusPlanButton.classList.contains('selected') ? 'selected' : 'unselected');
-                        }
+            selectedExamInput.value = selectedExam;
+            selectedPlanInput.value = planDescription;
+            plusPlanForm.submit();
 
-                        // Event listeners for Plus plan button and dropdown
-                        plusPlanButton.addEventListener('click', handlePlusPlanButtonClick);
-                        plusExamSelect.addEventListener('change', updatePlusPlanDetails);
+            localStorage.setItem('selectedExamPlus', selectedExam);
+            localStorage.setItem('buttonStatePlus', plusPlanButton.classList.contains('selected') ? 'selected' : 'unselected');
+        }
 
-                        // Initialize with stored values if available
-                        const storedPlusExam = localStorage.getItem('selectedExamPlus');
-                        const storedPlusButtonState = localStorage.getItem('buttonStatePlus');
+        plusPlanButton.addEventListener('click', handlePlusPlanButtonClick);
+        plusExamSelect.addEventListener('change', updatePlusPlanDetails);
 
-
-                        // Add animation to button when a valid exam is selected
-                        plusExamSelect.addEventListener('change', function() {
-                            updatePlusPlanDetails();
-                            if (plusExamSelect.value !== 'default' && pricingDetails[plusExamSelect.value]) {
-                                plusPlanButton.classList.add('pulse');
-                                setTimeout(() => plusPlanButton.classList.remove('pulse'), 1000);
-                            }
-                        });
-
-                        // Injecting the pulse animation style
-                        const style = document.createElement('style');
-                        style.innerHTML = `
+        const style = document.createElement('style');
+        style.innerHTML = `
             .pulse {
                 animation: pulse-animation 1s ease;
             }
@@ -661,9 +572,9 @@
                 100% { transform: scale(1); }
             }
         `;
-                        document.head.appendChild(style);
-                    });
-                </script>
+        document.head.appendChild(style);
+    });
+</script>
 
 
 
@@ -724,7 +635,7 @@
 
 
                 <div class="card-foote3 mt-5 d-flex align-items-center justify-content-center" style="background: linear-gradient(to bottom, #2BA6FF 0%, #0F9AFF 100%);">
-                    <a href="contact_us.php" style='color:white; font-weight:bold; font-size:20px;'>Contact us</a>
+                    <a href="contact-us.php" style='color:white; font-weight:bold; font-size:20px;'>Contact us</a>
                 </div>
 
             </div>
