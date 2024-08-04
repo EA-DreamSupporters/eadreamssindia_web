@@ -272,9 +272,13 @@
                 <div class="select py-1 d-flex justify-content-center align-items-center">
                     <select name="exam" id="examSelect" class="f-select">
                         <option value="default">Select Exam</option>
-                        <option value="TNPSC">TNPSC</option>
                         <option value="UPSC">UPSC</option>
-                        <option value="SSC">SSC</option>
+                        <option value="TNPSC - Group 1">TNPSC Group 1</option>
+                        <option value="TNPSC - Group 2">TNPSC Group 2</option>
+                        <option value="TNPSC - Group 4">TNPSC Group 4</option>
+                        <option value="CGL">SSC CGL</option>
+                        <option value="CHSL">SSC CHSL</option>
+                        <option value="MTS">SSC MTS</option>
                         <option value="Banking">Banking</option>
                     </select>
                 </div>
@@ -296,10 +300,14 @@
         
         // Pricing and months for each exam
         const pricing = {
-            'TNPSC': { price: '₹ 1500', months: '2 months', originalPrice: '₹ 5000' },
-            'UPSC': { price: '₹ 2500', months: '4 months', originalPrice: '₹ 6000' },
-            'SSC': { price: '₹ 1800', months: '3 months', originalPrice: '₹ 5500' },
-            'Banking': { price: '₹ 2000', months: '3 months', originalPrice: '₹ 5700' }
+            'UPSC': { price: '₹ 78,999', months: '10 months', originalPrice: '₹ 89,999' },
+            'TNPSC - Group 1': { price: '₹ 64,999', months: '8 months', originalPrice: '₹ 69,999' },
+            'TNPSC - Group 2': { price: '₹ 49,999', months: '6 months', originalPrice: '₹ 55,999' },
+            'TNPSC - Group 4': { price: '₹ 41,999', months: '6 months', originalPrice: '₹ 49,999' },
+            'CGL': { price: '₹ 49,999', months: '8 months', originalPrice: '₹ 55,999' },
+            'CHSL': { price: '₹ 41,999', months: '6 months', originalPrice: '₹ 49,999' },
+            'MTS': { price: '₹ 39,999', months: '6 months', originalPrice: '₹ 41,999' },
+            'Banking': { price: '₹ 54,999', months: '8 months', originalPrice: '₹ 59,999' }
         };
 
         function updatePlanDetails() {
@@ -445,11 +453,15 @@
                 <div class="select py-1 d-flex justify-content-center align-items-center">
 
                     <select name="plusExam" id="plusSelect" class="f-select">
-                        <option value="defalut">Select Exam</option>
-                        <option value="TNPSC">TNPSC</option>
+                    <option value="default">Select Exam</option>
                         <option value="UPSC">UPSC</option>
-                        <option value="SSC">SSC</option>
-                        <option value="BANKING">BANKING</option>
+                        <option value="TNPSC - Group 1">TNPSC Group 1</option>
+                        <option value="TNPSC - Group 2">TNPSC Group 2</option>
+                        <option value="TNPSC - Group 4">TNPSC Group 4</option>
+                        <option value="CGL">SSC CGL</option>
+                        <option value="CHSL">SSC CHSL</option>
+                        <option value="MTS">SSC MTS</option>
+                        <option value="BANKING">Banking</option>
                     </select>
 
                 </div>
@@ -470,10 +482,14 @@
 
         // Pricing and months for each exam
         const pricingDetails = {
-            'TNPSC': { price: '₹ 1500', months: '2 months', plusOriginalPrice: '₹ 5000' },
-            'UPSC': { price: '₹ 2500', months: '4 months', plusOriginalPrice: '₹ 6000' },
-            'SSC': { price: '₹ 1800', months: '3 months', plusOriginalPrice: '₹ 5500' },
-            'BANKING': { price: '₹ 2000', months: '3 months', plusOriginalPrice: '₹ 5700' }
+            'UPSC': { price: '₹ 74,999', months: '10 months', plusOriginalPrice: '₹ 84,999' },
+            'TNPSC - Group 1': { price: '₹ 59,999', months: '8 months', plusOriginalPrice: '₹ 63,999' },
+            'TNPSC - Group 2': { price: '₹ 45,999', months: '6 months', plusOriginalPrice: '₹ 50,999' },
+            'TNPSC - Group 4': { price: '₹ 37,999', months: '6 months', plusOriginalPrice: '₹ 44,999' },
+            'CGL': { price: '₹ 45,999', months: '8 months', plusOriginalPrice: '₹ 51,999' },
+            'CHSL': { price: '₹ 37,999', months: '6 months', plusOriginalPrice: '₹ 44,999' },
+            'MTS': { price: '₹ 34,999', months: '6 months', plusOriginalPrice: '₹ 36,999' },
+            'BANKING': { price: '₹ 49,999', months: '8 months', plusOriginalPrice: '₹ 53,999' }
         };
 
         function updatePlusPlanDetails() {

@@ -87,7 +87,7 @@ if(isset($_POST["send"]))
 .map-iframe {
   margin: 0;
     margin-bottom: 0px;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   margin-bottom: -40vh;
 }
@@ -139,11 +139,11 @@ display: none;
 				
 			</div>
 		
-			<section class="contact-wraper1" style="background-image: url(images/background/bg22.jpg);">	
+			<section class="contact-wraper1" style="background: linear-gradient(to right, rgba(26, 22, 104, 0.5) 0%, rgb(26, 22, 104) 100%);">	
 				<div class="container">
 					<div class="row">
 					
-						<div class="col-lg-5" style="margin-top: -4px;">
+						<div class="col-lg-5">
 							<div class="contact-info">
 								<div class="section-head text-white style-1">
 									<h3 class="title text-white">Career Counselling</h3>
@@ -151,10 +151,10 @@ display: none;
 								</div>
 					
 							</div>
-							<div class="contact-info">
+							<div class="contact-info" >
 								<div class="section-head text-white style-1">
 									<h3 class="title text-white">Get In Touch</h3>
-									<p>If you are interested in working with us, please get in touch.</p>
+									<p>If you are interested in working with us, Please get in touch.</p>
 								</div>
 								<ul class="no-margin">
 									<li class="icon-bx-wraper text-white left m-b30">
@@ -165,7 +165,7 @@ display: none;
 										</div>
 										<div class="icon-content">
 											<h5 class=" dz-tilte text-white">Our Address</h5>
-											<p> No.2 ,CMC road,keelaoorani south, karaikudi,sivaganga district,<br> tamil nadu -630001</p>
+											<p>NO.2, CMC Road, Keelaoorani South, Karaikudi, Sivaganga District, TamilNadu - 630001</p>
 										</div>
 									</li>
 									<li class="icon-bx-wraper text-white left m-b30">
@@ -176,7 +176,7 @@ display: none;
 										</div>
 										<div class="icon-content">
 											<h5 class="dz-tilte text-white">Our Email</h5>
-											<p>eadreamkkdi@gmail.com</p>
+											<p>eadreamssindia@gmail.com</p>
 										</div>
 									</li>
 										<li class="icon-bx-wraper text-white left m-b30">
@@ -220,7 +220,7 @@ display: none;
 									</div>
 									<div class="form-group">
 						
-									<label for="sel1">Do you passed out candidate ?</label>
+									<label for="sel1">Do you completed your degree ?</label>
 									</br>
   <select required name="passed" class="form-control" id="sel1" style="margin-top: 14px;">
     <option>Yes</option>
@@ -228,14 +228,14 @@ display: none;
     
   </select>
   	</div></br>
-	<p>Passed out year (m-y)</p>	
+	<p>Graduation Passing year (m-y)</p>	
 									<div class="form-group">
 										<input required type="month" class="form-control" name="pyear" placeholder="Enter year">
 									</div>
 				</br>
 												<div class="form-group">
 						
-									<label for="sel1">Are you self paced person ?</label>
+									<label for="sel1">Are you Self Preparing Aspirant ?</label>
 									</br>
   <select required class="form-control" id="sel1" name="self" style="margin-top: 14px;">
     <option>Yes</option>
@@ -265,7 +265,7 @@ display: none;
 			</section>
 			
 			<!-- Feature Box -->
-				<section class="content-inner">
+			<section class="content-inner">
 			<div class="container">
 				<div class="row sp15">
 					<div class="col-lg-3 col-md-6 col-sm-6 col-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -274,8 +274,8 @@ display: none;
 								<i class="fa-solid fa-smile icon-cell"></i>
 							</div>
 							<div class="icon-content">
-								<h2 class="dz-title counter m-b0">963</h2>
-								<p class="font-20">Happy Customers</p>
+								<h2><span class="dz-title counter m-b0">100</span><small>%</small></h2>
+								<p class="font-20">Customers Satisfaction</p>
 							</div>
 						</div>
 					</div>
@@ -285,7 +285,7 @@ display: none;
 								<i class="fa-solid fa-book icon-cell"></i>
 							</div>
 							<div class="icon-content">
-								<h2 class="dz-title counter m-b0">10,672</h2>
+								<h2><span class="dz-title counter m-b0">500</span><small>+</small></h2>
 								<p class="font-20">Book Collections</p>
 							</div>
 						</div>
@@ -296,8 +296,8 @@ display: none;
 								<i class="fa-solid fa-users icon-cell"></i>
 							</div>
 							<div class="icon-content">
-								<h2 class="dz-title counter m-b0">262</h2>
-								<p class="font-20">Experts</p>
+							<h2><span class="dz-title counter m-b0">1000</span><small>+</small></h2>
+								<p class="font-20">Aspirants</p>
 							</div>
 						</div>
 					</div>
@@ -307,8 +307,8 @@ display: none;
 								<i class="fa-solid fa-leaf icon-cell"></i>
 							</div>
 							<div class="icon-content">
-								<h2 class="dz-title counter m-b0">1457</h2>
-								<p class="font-20"> Total Soldout</p>
+								<h2><span class="dz-title counter m-b0">24,295</span></h2>
+								<p class="font-20">Community Engagement</p>
 							</div>
 						</div>
 					</div>

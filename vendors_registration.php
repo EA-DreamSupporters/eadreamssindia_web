@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,6 +56,7 @@ $phone=$_POST["phone"];
 $address=$_POST["address"];
 $message=$_POST["message"];
 $purpose=$_POST["purpose"];
+$who_are_you=$_POST["who_are_you"];
 
 $ret=mysqli_query($con, "select Email from vendors where Email='$email'");
     $result=mysqli_fetch_array($ret);
@@ -65,8 +65,8 @@ $ret=mysqli_query($con, "select Email from vendors where Email='$email'");
     }
     else{
 	
-$sql=mysqli_query($con, "INSERT INTO vendors(name, Email, phone_no, address, message, Purpose) 
-VALUES('$name','$email','$phone','$address','$message','$purpose')");
+$sql=mysqli_query($con, "INSERT INTO vendors(name, Email, phone_no, address, message, Purpose, who_are_you) 
+VALUES('$name','$email','$phone','$address','$message','$purpose','$who_are_you')");
 
 
     echo "<script> alert('Registered Successfully')</script>";
@@ -121,14 +121,24 @@ VALUES('$name','$email','$phone','$address','$message','$purpose')");
 										<textarea  rows="3" cols="80" class="form-control" name="address" placeholder="Your Address"></textarea>
 									
 									</div>
+                                    <div class="mb-4">
+										<label class="label-title">Who are you? *</label><br>
+										<input type="radio" name="who_are_you" value="Institute" required> Institute <br>
+										<input type="radio" name="who_are_you" value="Publisher" required> Book Seller / Publisher <br>
+										<input type="radio" name="who_are_you" value="Student" required> Student <br>
+										<input type="radio" name="who_are_you" value="Affiliate" required> Affiliate<br>
+										<input type="radio" name="who_are_you" value="Educator" required> Educators ( Individual )<br>
+										<input type="radio" name="who_are_you" value="Other" required> Other<br>
+									</div>
 									<div class="mb-4">
 										<label class="label-title">Purpose *</label>
 										<select class="form-control" name="purpose" required>
-										<option value="">Select Any</option>
-										<option value="option1">Option-1</option>
-										<option value="option2">Option-2</option>
+											<option value="">Choose Below</option>
+											<option value="CBM Option 1">Add my Course, Books, Material</option>
+											<option value="JR Option 2">Joblication Rights</option>
+											<option value="Govprep Option 3">Add GovPrep with my Institute</option>
 										</select>
-									
+
 									</div>
 									<div class="mb-4">
 										<label class="label-title">Message *</label>
@@ -168,4 +178,3 @@ VALUES('$name','$email','$phone','$address','$message','$purpose')");
 
 </body>
 </html>
-	

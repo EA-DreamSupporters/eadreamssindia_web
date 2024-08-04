@@ -393,13 +393,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <!-- Main Content and Buy Now Button -->
                     <div class="row pt-3">
                         <!-- Center content in a flex container -->
-                        <div class="col-12 d-flex justify-content-start align-items-start">
+                        <div class="col-12 d-flex justify-content-start align-items-center">
                             <!-- Select Exam Dropdown -->
                             <select id="examChoose" class="fs form-control-1 me-3" style="color: #fff; border-radius:3px;">
                                 <option value="" disabled selected>Select Exam</option>
-                                <option value="Exam1">Exam1</option>
-                                <option value="Exam2">Exam2</option>
+                                <option value="UPSC">UPSC</option>
+                                <option value="TNPSC - Group 1">TNPSC Group 1</option>
+                                <option value="TNPSC - Group 2">TNPSC Group 2</option>
+                                <option value="TNPSC - Group 4">TNPSC Group 4</option>
+                                <option value="CGL">SSC CGL</option>
+                                <option value="CHSL">SSC CHSL</option>
+                                <option value="MTS">SSC MTS</option>
+                                <option value="Bank">Banking</option>
                             </select>
+
+                            <!-- Pricing Display -->
+                            <div class="d-flex" style="margin-right:20px;"">
+                                <div id="pricingDisplay" class="me-3 align-content-center" style="font-weight:bolder; font-size:25px; margin-right:10px;"></div>
+                            </div>
 
                             <!-- Buy Now Button -->
                             <div class="buy-now">
@@ -425,20 +436,43 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 document.addEventListener("DOMContentLoaded", function() {
                                     const examSelect = document.getElementById("examChoose");
                                     const planSelect = document.getElementById("plan");
+                                    const pricingDisplay = document.getElementById("pricingDisplay");
+
+                                    const plan = {
+                                        "UPSC": "₹ 45,999",
+                                        "TNPSC - Group 1": "₹ 34,999",
+                                        "TNPSC - Group 2": "₹ 25,999",
+                                        "TNPSC - Group 4": "₹ 20,999",
+                                        "CGL": "₹ 25,999",
+                                        "CHSL": "₹ 20,999",
+                                        "MTS": "₹ 14,999",
+                                        "Bank": "₹ 29,999",
+                                    };
 
                                     const plans = {
-                                        "Exam1": "GovPrep (Essential Plan) | Exam1 - ₹2000",
-                                        "Exam2": "GovPrep (Essential Plan) | Exam2 - ₹2500"
+                                        "UPSC": "GovPrep ( Essential Plan ) | UPSC ",
+                                        "TNPSC - Group 1": "GovPrep ( Essential Plan ) | TNPSC Group 1 ",
+                                        "TNPSC - Group 2": "GovPrep ( Essential Plan ) | TNPSC Group 2 ",
+                                        "TNPSC - Group 4": "GovPrep ( Essential Plan ) | TNPSC Group 4 ",
+                                        "CGL": "GovPrep ( Essential Plan ) | SSC CGL ",
+                                        "CHSL": "GovPrep ( Essential Plan ) | SSC CHSL ",
+                                        "MTS": "GovPrep ( Essential Plan ) | SSC MTS ",
+                                        "Bank": "GovPrep ( Essential Plan ) | Banking",
                                     };
+                                    
 
                                     examSelect.addEventListener("change", function() {
                                         const selectedExam = examSelect.value;
                                         if (plans[selectedExam]) {
-                                            planSelect.innerHTML = `<option value="${plans[selectedExam]}">${plans[selectedExam]}</option>`;
+                                            planSelect.innerHTML = `<option value="${plans[selectedExam]}">${plans[selectedExam]} - ${plan[selectedExam]}</option>`;
+                                            pricingDisplay.innerHTML = `<p style="margin-bottom:5px;">${plan[selectedExam]}</p>`;
                                         } else {
                                             planSelect.innerHTML = '<option value="" disabled selected>Select a Pricing above Plan</option>';
+                                            pricingDisplay.innerHTML = '';
                                         }
                                     });
+                                    // Initialize to hide pricing display
+                                    pricingDisplay.innerHTML = '';
                                 });
                             </script>
 

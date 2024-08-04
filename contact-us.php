@@ -87,7 +87,7 @@
 							<div class="contact-info">
 								<div class="section-head text-white style-1">
 									<h3 class="title text-white">Get In Touch</h3>
-									<p>If you are interested in working with us, please get in touch.</p>
+									<p>If you are interested in working with us, Please get in touch.</p>
 								</div>
 								<ul class="no-margin">
 									<li class="icon-bx-wraper text-white left m-b30">
@@ -98,7 +98,7 @@
 										</div>
 										<div class="icon-content">
 											<h5 class=" dz-tilte text-white">Our Address</h5>
-											<p> No.2 ,CMC road,keelaoorani south, karaikudi,sivaganga district,<br> tamil nadu -630001</p>
+											<p> NO.2, CMC Road, Keelaoorani South, Karaikudi, Sivaganga District, TamilNadu - 630001</p>
 										</div>
 									</li>
 									<li class="icon-bx-wraper text-white left m-b30">
@@ -109,7 +109,7 @@
 										</div>
 										<div class="icon-content">
 											<h5 class="dz-tilte text-white">Our Email</h5>
-											<p>eadreamkkdi@gmail.com</p>
+											<p>eadreamssindia@gmail.com</p>
 										</div>
 									</li>
 										<li class="icon-bx-wraper text-white left m-b30">
@@ -130,7 +130,7 @@
 							<div class="contact-area1 m-r20 m-md-r0">
 								<div class="section-head style-1">
 									<h6 class="sub-title text-primary">CONTACT US</h6>
-									<h3 class="title m-b20">Get In Touch With Us</h3>
+									<h3 class="title m-b20">Reach Out to us</h3>
 								</div>
 								<form  method="post" action="con_form.php">
 									<p>Name<span class="error">* <?php echo $nameErr; ?> </span></p>  	
@@ -160,7 +160,7 @@
 										
 									</div>
 									<div class="input-group">
-										<input required type="checkbox"> <p id="term"> I Accept with the   <a href="privacy">Privacy Policy</a> of EaDream Supporters.</p>
+										<input required type="checkbox"> <p id="term"> I accept with the <a href="privacy">Privacy Policy</a> of EA Dream Supporters.</p>
 										
 									</div>
 									<div>
@@ -174,7 +174,7 @@
 			</section>
 			
 			<!-- Feature Box -->
-				<section class="content-inner">
+			<section class="content-inner">
 			<div class="container">
 				<div class="row sp15">
 					<div class="col-lg-3 col-md-6 col-sm-6 col-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -183,8 +183,8 @@
 								<i class="fa-solid fa-smile icon-cell"></i>
 							</div>
 							<div class="icon-content">
-								<h2 class="dz-title counter m-b0">963</h2>
-								<p class="font-20">Happy Customers</p>
+								<h2><span class="dz-title counter m-b0">100</span><small>%</small></h2>
+								<p class="font-20">Customers Satisfaction</p>
 							</div>
 						</div>
 					</div>
@@ -194,7 +194,7 @@
 								<i class="fa-solid fa-book icon-cell"></i>
 							</div>
 							<div class="icon-content">
-								<h2 class="dz-title counter m-b0">10,672</h2>
+								<h2><span class="dz-title counter m-b0">500</span><small>+</small></h2>
 								<p class="font-20">Book Collections</p>
 							</div>
 						</div>
@@ -205,8 +205,8 @@
 								<i class="fa-solid fa-users icon-cell"></i>
 							</div>
 							<div class="icon-content">
-								<h2 class="dz-title counter m-b0">262</h2>
-								<p class="font-20">Experts</p>
+							<h2><span class="dz-title counter m-b0">1000</span><small>+</small></h2>
+								<p class="font-20">Aspirants</p>
 							</div>
 						</div>
 					</div>
@@ -216,8 +216,8 @@
 								<i class="fa-solid fa-leaf icon-cell"></i>
 							</div>
 							<div class="icon-content">
-								<h2 class="dz-title counter m-b0">1457</h2>
-								<p class="font-20"> Total Soldout</p>
+								<h2><span class="dz-title counter m-b0">24,295</span></h2>
+								<p class="font-20">Community Engagement</p>
 							</div>
 						</div>
 					</div>
