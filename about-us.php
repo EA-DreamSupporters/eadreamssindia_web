@@ -446,11 +446,10 @@
                             <aside class="side-bar sticky-top right">
                                 <div class="service_menu_nav widget style-1">
                                     <ul class="menu">
-                                        <li class="menu-item"><a href="self-preparation"><span>Self Study
-                                                    India</span></a></li>
-                                        <li class="menu-item"><a href="guidance"><span>GovPrep</span></a></li>
-                                        <li class="menu-item active"><a href="buy-book">Buy A Book</a></li>
-                                        <li class="menu-item"><a href="rent-book">Rent A Book</a></li>
+                                        <li class="menu-item"><a href="self-preparation"><span>Self Study India</span></a></li>
+                                        <li class="menu-item active"><a href="guidance"><span>GovPrep</span></a></li>
+                                        <li class="menu-item"><a href="buy-book">Book & Materials</a></li>
+                                        <li class="menu-item"><a href="rent-book">DigiLib - A Doorstep Library</a></li>
                                     </ul>
                                 </div>
                             </aside>

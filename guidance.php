@@ -467,7 +467,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                             planSelect.innerHTML = `<option value="${plans[selectedExam]}">${plans[selectedExam]} - ${plan[selectedExam]}</option>`;
                                             pricingDisplay.innerHTML = `<p style="margin-bottom:5px;">${plan[selectedExam]}</p>`;
                                         } else {
-                                            planSelect.innerHTML = '<option value="" disabled selected>Select a Pricing above Plan</option>';
+                                            planSelect.innerHTML = '<option value="" disabled selected>Select Plan above to auto select</option>';
                                             pricingDisplay.innerHTML = '';
                                         }
                                     });
@@ -595,7 +595,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                     <label for="plan">Choose Plan</label>
                                     </br>
                                     <select required class="form-control" id="plan" name="plan" required>
-                                        <option value="" disabled selected>Select a Pricing above Plan</option>
+                                        <option value="" disabled selected>Select Plan above to auto select</option>
                                     </select>
 
                                 </div></br>
