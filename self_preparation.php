@@ -423,8 +423,8 @@
                             </div>
 
                             <h4 class="dz-title">
-                                <a href="blog-details-2.html">Success depends upon previous preparation, and without such preparation, there is sure to be failure.</a>
-                                <a href="blog-details-2.html" style="font-weight:normal; font-size:20px;">- confucius</a>
+                                <a href="blog-details-2.html">Hard Work is Surely Key to Success. <br> But, Smart-work is key to be Successful.<br></a>
+                                <a href="blog-details-2.html" style="font-weight:normal; font-size:20px;">- Masood Ahmad</a>
                             </h4>
                         </div>
                     </div>
