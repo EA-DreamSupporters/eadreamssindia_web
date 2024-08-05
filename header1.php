@@ -130,11 +130,11 @@ if($name==$name1 & $pass==$pass2)
 
 .main-swiper .swiper-pagination-five .swiper-pagination-bullet {
 
-    background-color: #1A1668;
+    background-color: #1e1e1e;
 }
 
 .swiper-pagination-five .swiper-pagination-bullet.swiper-pagination-bullet-active {
-    background-color: #1A1668;
+    background-color: #D9E545;
 }
 
 .main-slider .main-swiper-thumb .swiper-slide {

@@ -58,9 +58,6 @@
 
     <style>
 
-    .main-swiper .swiper-pagination-five .swiper-pagination-bullet {
-    background-color: #D9E545;
-    }
     .main-slider.style-1.slider-white .banner-content .sub-title {
 
         color: #fff;
